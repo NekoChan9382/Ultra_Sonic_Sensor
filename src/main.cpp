@@ -21,7 +21,7 @@ int clamp(int value, int min, int max) {
 
 
 int main() {
-    int goal = 5;
+    int goal = 15;
     int pre_error = 0;
     int integral = 0;
 
@@ -35,7 +35,7 @@ int main() {
         integral += error;
         int deriv = error - pre_error;
         output[0] = error * gain[0] + integral * gain[1] + deriv * gain[2];
-        output[0] = clamp(output[0], -13000, 13000);
+        output[0] = clamp(output[0], -16000, 16000);
         pre_error = error;
 
         printf("distance: %d cm, output: %d\n", pos,output[0]);
